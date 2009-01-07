@@ -18,4 +18,6 @@ Gem::Specification.new do |s|
                   "spec/result_example.xml"]
   s.add_dependency("nokogiri", ["> 0.0.0"])
 end
+
+
   
