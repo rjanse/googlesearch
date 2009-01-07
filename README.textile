@@ -1,0 +1,29 @@
+h1. GoogleSearch
+
+h2. Description
+
+GoogleSearch is a Ruby Abstraction of the Google CSE XML API.
+
+h2. Installation
+
+<pre>
+    <code>
+        gem sources -a http://gems.github.com
+        sudo gem install mlangenberg-googlesearch 
+    </code>
+</pre>
+
+h2. Example
+
+<pre>
+    <code>
+        require 'googlesearch'
+        search = GoogleSearch.new :cx => 'unique-cse-id', :q => 'chunky+bacon'
+        search.response.total_number_of_results #=> 54
+        search.response.total_server_time #=> 0.189222
+        search.results.first.index #=> 1
+        search.results.first.title #=> 'CHUNKY BACON!'
+        search.results.first.excerpt #=> "<b>chunky bacon</b>. why's (poignant) guide to Ruby ..."
+        search.results.first.url #=> "www.<b>chunkybacon</b>.com/"        
+    </code>
+</pre>
