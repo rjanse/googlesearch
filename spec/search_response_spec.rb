@@ -12,7 +12,11 @@ describe SearchResponse do
   end
   
   it "should be able to return total number of results" do
-    @response.total_number_of_results.should == 5
+    @response.total_number_of_results.should == 520
+  end
+  
+  it "should be able to return the index of the first search result returned in the result set" do
+    @response.index_of_first_result.should == 1
   end
   
   it "should be able to return an array of SearchResult objects" do
