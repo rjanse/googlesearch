@@ -18,9 +18,11 @@ h2. Example
 <pre>
     <code>
         require 'googlesearch'
-        response = GoogleSearch.new(:cx => 'unique-cse-id', :q => 'chunky+bacon', :cr => 'en', :lr => 'en').response
+        response = GoogleSearch.new(:cx => 'unique-cse-id', :q => 'chunky+bacon', :cr => 'en', :lr => 'en', :start => 0, :num => 5).response
         response.total_number_of_results #=> 54
         response.total_server_time #=> 0.189222
+        response.index_of_first_result #=> 1
+        response.index_of_last_result #=> 5
         response.results.first.index #=> 1
         response.results.first.title #=> 'CHUNKY BACON!'
         response.results.first.excerpt #=> "<b>chunky bacon</b>. why's (poignant) guide to Ruby ..."
