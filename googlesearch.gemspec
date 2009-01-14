@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
                   "spec/search_response_spec.rb",
                   "spec/spec_helper.rb",
                   "spec/result_example.xml"]
-  s.add_dependency("nokogiri", ["> 0.0.0"])
+  s.add_dependency("nokogiri", [">= 1.1.1"])
 end
 
 
