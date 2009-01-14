@@ -19,6 +19,10 @@ describe SearchResponse do
     @response.index_of_first_result.should == 1
   end
   
+  it "should be able to return the index of the last search result returned in the result set" do
+    @response.index_of_last_result.should == 5
+  end
+  
   it "should be able to return an array of SearchResult objects" do
      @response.results.map { |r| r.class }.should == [SearchResult]*5
   end
