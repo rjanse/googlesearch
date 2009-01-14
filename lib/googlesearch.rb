@@ -1,6 +1,9 @@
+require 'rubygems'
 require 'googlesearch/search_response'
 require 'googlesearch/search_result'
 require 'open-uri'
+require 'nokogiri'
+
 
 class GoogleSearch
   

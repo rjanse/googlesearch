@@ -1,5 +1,3 @@
-require 'nokogiri'
-
 class SearchResponse
   def initialize(xml)
     doc = Nokogiri::XML(xml)
