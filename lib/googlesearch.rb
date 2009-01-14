@@ -9,8 +9,8 @@ class GoogleSearch
   
   attr_reader :response
   
-  def initialize(options, search_request = SearchRequest.new)
-    @response = SearchResponse.new search_request.get("http://www.google.com/search?&q=#{options[:q]}&client=google-csbe&output=xml&cx=#{options[:cx]}&cr=lang_#{options[:cr]}&lr=lang_#{options[:lr]}&start=#{options[:start]}&num=#{options[:num]}")
+  def initialize(o = {}, search_request = SearchRequest.new)
+    @response = SearchResponse.new search_request.get("http://www.google.com/search?&q=#{o[:q]}&client=google-csbe&output=xml&cx=#{o[:cx]}&cr=lang_#{o[:cr]}&lr=lang_#{o[:lr]}&start=#{o[:start]}&num=#{o[:num]}")
   end
 end
 
