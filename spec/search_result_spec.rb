@@ -28,4 +28,9 @@ describe SearchResult do
     @results[3].language.should == 'nl'
     @results[4].language.should == 'en'
   end
+  
+  it "should be able to return the mime type if applicable" do
+    @results[0].mime_type.should == nil
+    @results[4].mime_type.should == 'application/pdf'
+  end
 end
