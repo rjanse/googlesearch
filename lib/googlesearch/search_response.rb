@@ -6,9 +6,6 @@ class SearchResponse
     @index_of_first_result = doc.root.xpath('RES/@SN').text.to_i
     @index_of_last_result = doc.root.xpath('RES/@EN').text.to_i
     @total_number_of_results = doc.root.xpath('RES/M').text.to_i
-    @results = []
-    doc.root.xpath('RES//R').each do |res_doc|
-      @results << SearchResult.new(res_doc)
-    end
+    @results = doc.root.xpath('RES//R').map { |res_doc| SearchResult.new(res_doc) }
   end
 end
