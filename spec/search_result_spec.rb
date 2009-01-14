@@ -23,4 +23,9 @@ describe SearchResult do
   it "should be able to return the third text of the results" do
     @results[2].excerpt.should == %[De &#39;NV <b>Intercodam</b>&#39; is opgericht op 16 september 1919 en handelde in de meest <br>  uiteenlopende producten. In 1972 werd deze NV omgezet in een Beheer B.V. <b>...</b>]
   end
+  
+  it "should be able to return the language of the result" do
+    @results[3].language.should == 'nl'
+    @results[4].language.should == 'en'
+  end
 end
