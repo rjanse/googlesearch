@@ -39,4 +39,9 @@ describe SearchResponse do
   it "should known that there are five pages with results" do
     @response.number_of_pages.should == 5
   end
+  
+  it "should provide high level pagination" do
+    @response.pages[0].page_number.should == 1
+    @response.pages[0].start_index.should == 0
+  end
 end

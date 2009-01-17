@@ -1,6 +1,8 @@
 require 'rubygems'
+require 'enumerator'
 require 'googlesearch/search_response'
 require 'googlesearch/search_result'
+require 'googlesearch/search_page'
 require 'open-uri'
 require 'nokogiri'
 

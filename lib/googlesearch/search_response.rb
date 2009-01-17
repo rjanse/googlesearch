@@ -13,4 +13,8 @@ class SearchResponse
   def number_of_pages
     (total_number_of_results/requested_number_of_search_results.to_f).round
   end
+  
+  def pages
+    @pages ||= number_of_pages.enum_for(:times).collect { |page_index| SearchPage.new(page_index, requested_number_of_search_results) }
+  end
 end
