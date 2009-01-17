@@ -9,4 +9,8 @@ class SearchResponse
     @results = doc.root.xpath('RES//R').map { |res_doc| SearchResult.new(res_doc) }
     @requested_number_of_search_results = requested_number_of_search_results
   end
+  
+  def number_of_pages
+    (total_number_of_results/requested_number_of_search_results.to_f).round
+  end
 end

@@ -12,7 +12,7 @@ describe SearchResponse do
   end
   
   it "should be able to return total number of results" do
-    @response.total_number_of_results.should == 520
+    @response.total_number_of_results.should == 23
   end
   
   it "should be able to return the index of the first search result returned in the result set" do
@@ -34,5 +34,9 @@ describe SearchResponse do
   
   it "should be able to return an array of SearchResult objects" do
      @response.results.map { |r| r.class }.should == [SearchResult]*5
+  end
+  
+  it "should known that there are five pages with results" do
+    @response.number_of_pages.should == 5
   end
 end
