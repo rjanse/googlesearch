@@ -18,11 +18,11 @@ class SearchResponse
   end
   
   def pages
-    @pages ||= number_of_pages.enum_for(:times).collect { |page_index| SearchPage.new(page_index, requested_number_of_search_results) }
+    @pages ||= number_of_pages.enum_for(:times).collect { |page_index| SearchPage.new(page_index, start_index, requested_number_of_search_results) }
   end
   
   def current_page
-    pages.find { |p| p.start_index.should == start_index }
+    pages.find { |p| p.current_page? }
   end
   
   def previous_page
