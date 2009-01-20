@@ -57,4 +57,12 @@ describe SearchResponse do
   it "should be able to return the current page" do
     @response.current_page.should == @response.pages[0]
   end
+  
+  it "should be able to return the next page" do
+    @response.next_page.should == @response.pages[1]
+  end
+  
+  it "should return nil for the previous page" do
+    @response.previous_page.should == nil
+  end
 end

@@ -24,4 +24,12 @@ class SearchResponse
   def current_page
     pages.find { |p| p.start_index.should == start_index }
   end
+  
+  def previous_page
+    start_index == 0 ? nil : pages[pages.index(current_page)-1]
+  end
+  
+  def next_page
+    pages[pages.index(current_page)+1]
+  end
 end
