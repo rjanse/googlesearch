@@ -15,6 +15,6 @@ class SearchPage
   end
   
   def current_page?
-    start_index == @response_start_index
+    start_index == @response_start_index.to_i
   end
 end
