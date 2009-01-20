@@ -23,6 +23,15 @@ describe SearchResponse do
     @response.index_of_last_result.should == 5
   end
   
+  it "should return 5 for the start index" do
+    @response = SearchResponse.new(@example_xml, 0, 5)
+    @response.start_index.should == 5
+  end
+  
+  it "should return 0 for the start index as default" do
+    @response.start_index.should == 0
+  end
+  
   it "should return 5 for the requested number of search results" do
     @response.requested_number_of_search_results.should == 5
   end
@@ -43,5 +52,9 @@ describe SearchResponse do
   it "should provide high level pagination" do
     @response.pages[0].page_number.should == 1
     @response.pages[0].start_index.should == 0
+  end
+  
+  it "should be able to return the current page" do
+    @response.current_page.should == @response.pages[0]
   end
 end
