@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'googlesearch'
-  s.version = '0.1.0'
+  s.version = '0.2.0'
   s.date = '2009-01-14'
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = false
