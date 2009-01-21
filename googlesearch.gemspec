@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'googlesearch'
-  s.version = '0.2.2'
-  s.date = '2009-01-20'
+  s.version = '0.2.3'
+  s.date = '2009-01-21'
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = false
   s.summary = 'Google CSE implementation'
