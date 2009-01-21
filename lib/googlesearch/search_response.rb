@@ -30,6 +30,7 @@ class SearchResponse
   end
   
   def next_page
+    return nil if pages.empty?
     pages[pages.index(current_page)+1]
   end
 end
