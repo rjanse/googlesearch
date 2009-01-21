@@ -1,8 +1,8 @@
 class SearchPage
   #index is zero-based
-  def initialize(index, response_start_index, results_per_page)
+  def initialize(index, index_of_last_result, results_per_page)
     @index = index
-    @response_start_index = response_start_index
+    @index_of_last_result = index_of_last_result
     @results_per_page = results_per_page
   end
   
@@ -15,6 +15,6 @@ class SearchPage
   end
   
   def current_page?
-    start_index == @response_start_index.to_i
+    (@index_of_last_result/@results_per_page) == page_number
   end
 end

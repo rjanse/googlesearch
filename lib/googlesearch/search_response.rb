@@ -18,7 +18,7 @@ class SearchResponse
   end
   
   def pages
-    @pages ||= number_of_pages.enum_for(:times).collect { |page_index| SearchPage.new(page_index, start_index, requested_number_of_search_results) }
+    @pages ||= number_of_pages.enum_for(:times).collect { |page_index| SearchPage.new(page_index, index_of_last_result, requested_number_of_search_results) }
   end
   
   def current_page
