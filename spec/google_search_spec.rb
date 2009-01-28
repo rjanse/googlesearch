@@ -4,7 +4,7 @@ describe GoogleSearch do
   it "should be able to create a search query" do
     request_mock = mock('request')
     request_mock.should_receive(:get).with(
-      'http://www.google.com/search?&q=adres&client=google-csbe&output=xml_no_dtd&cx=unique-cse-id&cr=lang_nl&lr=lang_nl&start=0&num=10'
+      'http://www.google.com/search?cx=unique-cse-id&cr=lang_nl&output=xml_no_dtd&q=adres&lr=lang_nl&client=google-csbe&start=0&num=10'
     ).and_return('wat_xml')
     
     SearchResponse.should_receive(:new).with('wat_xml', 10, 0).and_return('search-response-object')

@@ -94,7 +94,7 @@ class GoogleSearch
     # Required!!! The client parameter must be set to google-csbe if you use Google Custom Search Service.
     
     
-    #o[:cr] ||= "countryNL"
+    o[:cr] = "lang_#{o[:cr]}" if o[:cr]
     # Optional. The cr parameter restricts search results to documents originating in a particular country.
     
     
@@ -117,8 +117,7 @@ class GoogleSearch
     #o[:ie] ||= "utf8"
     # Optional. The ie parameter sets the character encoding scheme that should be used to interpret the query string. The default ie value is latin1.
     
-    
-    #o[:lr] ||= "lang_nl"
+    o[:lr] = "lang_#{o[:lr]}" if o[:lr]
     # Optional. The lr (language restrict) parameter restricts search results to documents written in a particular language.
     
     
