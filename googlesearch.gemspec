@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.has_rdoc = false
   s.summary = 'Google CSE implementation'
   s.description = 'Abstraction of the Google CSE XML API'
-  s.authors = ["Rene Heino", "Matthijs Langenberg"]
+  s.authors = ["Rene Heino", "Matthijs Langenberg", "Robin Janse"]
   s.email = 'rails@newminds.nl'
   s.files = [ "googlesearch.gemspec", 
               "lib/googlesearch.rb",
