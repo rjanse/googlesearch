@@ -162,7 +162,9 @@ class GoogleSearch
     
     
     # And finally:
-    @response = SearchResponse.new(search_request.get("http://www.google.com/search?" + o.map {|key, value| "#{key}=#{value}"}.join('&')))
+    @response = SearchResponse.new(
+      search_request.get("http://www.google.com/search?" + o.map {|key, value| "#{key}=#{value}"}.join('&')), o[:num], o[:start]
+    )
     
   end
 end
