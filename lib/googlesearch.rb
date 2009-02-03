@@ -95,11 +95,11 @@ class GoogleSearch
     # Required!!! The client parameter must be set to google-csbe if you use Google Custom Search Service.
     
     
-    o[:cr] = "country#{o[:cr].upcase}" if o[:cr]
+    #o[:cr] = "country#{o[:cr].upcase}" if o[:cr]
     # Optional. The cr parameter restricts search results to documents originating in a particular country.
     
     
-    o[:cx] ||= ""
+    #o[:cx] ||= ""
     # Required!!! The cx parameter specifies a unique code that identifies a custom search engine. You must specify a Custom Search Engine using the cx parameter to retrieve search results from that CSE.
     
     
@@ -118,11 +118,11 @@ class GoogleSearch
     #o[:ie] ||= "utf8"
     # Optional. The ie parameter sets the character encoding scheme that should be used to interpret the query string. The default ie value is latin1.
     
-    o[:lr] = "lang_#{o[:lr].downcase}" if o[:lr]
+    #o[:lr] = "lang_#{o[:lr].downcase}" if o[:lr]
     # Optional. The lr (language restrict) parameter restricts search results to documents written in a particular language.
     
     
-    o[:num] ||= 10
+    #o[:num] ||= 10
     # Optional. The num parameter identifies the number of search results to return. The default num value is 10, and the maximum value is 20. If you request more than 20 results, only 20 results will be returned.
     
     
@@ -133,11 +133,11 @@ class GoogleSearch
     #o[:oe] ||= "utf8"
     # Optional. The oe parameter sets the character encoding scheme that should be used to decode the XML result. The default oe value is latin1.
     
-    o[:output] ||= "xml_no_dtd"
+    #o[:output] ||= "xml_no_dtd"
     # Required. The output parameter specifies the format of the XML results. The only valid values for this parameter are xml and xml_no_dtd. The chart below explains how these parameter values differ.
     
     
-    o[:q] ||= ""
+    #o[:q] ||= ""
     # Optional. The q parameter specifies the search query entered by the user. Even though this parameter is optional, you must specify a value for at least one of the query parameters (as_epq, as_lq, as_oq, as_q, as_rq) to get search results.
     
     
@@ -145,7 +145,7 @@ class GoogleSearch
     # Optional. The safe parameter indicates how search results should be filtered for adult and pornographic content. The default value for the safe parameter is off. Valid parameter values are: off, medium or high
     
     
-    o[:start] ||= 10
+    #o[:start] ||= 10
     # Optional. The start parameter indicates the first matching result that should be included in the search results. The start parameter uses a zero-based index, meaning the first result is 0, the second result is 1 and so forth.
     
     
@@ -163,8 +163,8 @@ class GoogleSearch
     
     
     # And finally:
-    @url = search_request.get("http://www.google.com/search?" + o.map {|key, value| "#{key}=#{value}"}.join('&'))
-    @response = SearchResponse.new(url)
+    @url = "http://www.google.com/search?" + o.map {|key, value| "#{key}=#{value}"}.join('&')
+    @response = SearchResponse.new(search_request.get(url))
     
   end
 end
